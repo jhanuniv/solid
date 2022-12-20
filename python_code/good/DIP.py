@@ -6,6 +6,7 @@
 
 from abc import ABCMeta, abstractmethod
 
+
 class IWorker(object):
     __metaclass__ = ABCMeta
 
@@ -15,10 +16,11 @@ class IWorker(object):
 
 # `IWorker` defines a interface which requires `work` method.
 
+
 class Worker(IWorker):
 
     def work(self):
-        print "I'm working!!"
+        print("I'm working!!")
 
 
 class Manager(object):
@@ -27,7 +29,8 @@ class Manager(object):
         self.worker = None
 
     def set_worker(self, worker):
-        assert isinstance(worker, IWorker), '`worker` must be of type {}'.format(Worker)
+        assert isinstance(
+            worker, IWorker), '`worker` must be of type {}'.format(Worker)
 
         self.worker = worker
 
@@ -36,13 +39,15 @@ class Manager(object):
             self.worker.work()
             # And some complex codes go here....
 
+
 class SuperWorker(IWorker):
 
     def work(self):
-        print "I work very hard!!!"
+        print("I work very hard!!!")
 
 # Now, the manager support `SuperWorker`...
 # In addition, it will support any worker which obeys the interface defined by `IWorker`!
+
 
 def main():
 
@@ -57,7 +62,8 @@ def main():
         manager.set_worker(super_worker)
         manager.manage()
     except AssertionError:
-        print "manager fails to support super_worker...."
+        print("manager fails to support super_worker....")
+
 
 if __name__ == "__main__":
     main()

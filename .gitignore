@@ -3,3 +3,7 @@
 
 ## python ##
 *.pyc
+
+## sonar ##
+.scannerwork
+sonar-project.properties
