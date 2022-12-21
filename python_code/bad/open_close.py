@@ -11,6 +11,7 @@ class Rectangle(object):
         self.width = width
         self.height = height
 
+
 class AreaCalculator(object):
 
     def __init__(self, shapes):
@@ -26,10 +27,12 @@ class AreaCalculator(object):
 
         return total
 
+
 def main():
     shapes = [Rectangle(2, 3), Rectangle(1, 6)]
     calculator = AreaCalculator(shapes)
-    print ("The total area is: "), calculator.total_area
+    print("The total area is: "), calculator.total_area
+
 
 if __name__ == '__main__':
 

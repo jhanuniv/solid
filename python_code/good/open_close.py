@@ -7,12 +7,14 @@
 
 from abc import ABCMeta, abstractproperty
 
+
 class Shape(object):
     __metaclass__ = ABCMeta
 
     @abstractproperty
     def area(self):
         pass
+
 
 class Rectangle(Shape):
 
@@ -23,6 +25,7 @@ class Rectangle(Shape):
     @property
     def area(self):
         return self.width * self.height
+
 
 class AreaCalculator(object):
 
@@ -40,11 +43,13 @@ class AreaCalculator(object):
 # area of different shape, we only need to define new subtype of `Shape` and leave other code
 # alone without modify them. That is the key of open/close principle.
 
+
 def main():
     shapes = [Rectangle(1, 6), Rectangle(2, 3)]
     calculator = AreaCalculator(shapes)
 
     print("The total area is: ", calculator.total_area)
+
 
 if __name__ == '__main__':
     main()
