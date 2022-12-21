@@ -32,8 +32,8 @@ def main():
     try:
         prisoner.walk_North(10)
         prisoner.walk_East(-3)
-    except:
-        pass
+    except IndexError:
+        print("invalid PRISON_LOCATION")
     
     print("The location of the prison: {}".format(prisoner.PRISON_LOCATION))
     print("The current position of the prisoner: {}".format(prisoner.position))
